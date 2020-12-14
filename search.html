@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Recipes4Me</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link
       rel="icon"
       type="image/png"
@@ -17,46 +17,32 @@
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/search.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
+
   </head>
 
   <body>
     <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text" href="index.html">Recipes4Me</li>
-          <li>
-            <a href="cookbook.html">CookBook</a>
-          </li>
-        </ul>
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text" href="index.html">Recipes4Me</li>
+            <li>
+              <a href="cookbook.html">CookBook</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button success">Search</button></li>
+          </ul>
+        </div>
       </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><input type="search" placeholder="Search" /></li>
-          <li><button type="button" class="button success">Search</button></li>
-        </ul>
-      </div>
-    </div>
-    <main class="container">
-      <div class="row">
-        <section class=".col-12 .col-sm-12 col-md-12 .col-lg-12 intro">
-          <h2>Dinner Time!</h2>
-          <p>
-            Your one stop spot for recipes. Add your own, learn other's, and
-            build your own collection of Tasty Recipes!
-            <a class="button small expanded" href="cookbook.html"
-              >Start your CookBook.</a
-            >
-          </p>
-        </section>
-      </div>
-    </main>
-
+    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
