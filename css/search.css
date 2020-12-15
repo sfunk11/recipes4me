@@ -1,11 +1,25 @@
-body {
-  background: url("../assets/search.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: "Playfair Display", serif;
-}
-.top-bar-middle {
+
+body { 
+    background: url("../assets/search.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Playfair Display', serif;
+  }
+
+.grid-container {
+    position: relative;
+    top: 25px;
+    background-color:rgba(129, 127, 127, 0.788);
+    color:rgb(255, 255, 255);
+    padding: 05px;
+  }
+.expanded{
+  position: relative;
+  top:30px;
+  background-color:rgba(129, 127, 127, 0.788);
+  
+.top-bar-middle{
   left: -50px;
 }
