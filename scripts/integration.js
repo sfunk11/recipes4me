@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 //  recipe puppy search by main ingredient or name
     const settingsPuppy = {
         "async": true,
@@ -34,8 +35,10 @@ $.ajax(settings).done(function (response) {
 
 // The mealdb.com search by name
 let searchTerm = "curry";
+
 let searchIngredient = "chicken";
 let queryURL= "https://www.themealdb.com/api/json/v1/1/search.php?s=" + searchTerm + "&i=" + searchIngredient
+
 
 $.ajax({
     url: queryURL,
@@ -43,6 +46,7 @@ $.ajax({
   }).then(function(response) {
       console.log(response);
   });
+
 
 //   // The mealdb.com search by main ingredient
 // let searchIngredient = "chicken";
@@ -54,7 +58,6 @@ $.ajax({
 //   }).then(function(response) {
 //       console.log(response);
 //   });
-
 
 
 
