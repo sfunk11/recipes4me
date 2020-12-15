@@ -6,3 +6,16 @@ body {
     background-size: cover;
     font-family: 'Playfair Display', serif;
   }
+
+.grid-container {
+    position: relative;
+    top: 25px;
+    background-color:rgba(129, 127, 127, 0.788);
+    color:rgb(255, 255, 255);
+    padding: 05px;
+  }
+.expanded{
+  position: relative;
+  top:30px;
+  background-color:rgba(129, 127, 127, 0.788);
+}

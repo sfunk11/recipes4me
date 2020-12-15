@@ -30,19 +30,52 @@
     <div class="top-bar">
         <div class="top-bar-left">
           <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text" href="index.html">Recipes4Me</li>
+            <li class="menu-text"></li>
+            <li><a href="index.html">Recipes4Me</a></li>
             <li>
-              <a href="cookbook.html">CookBook</a></li>
+              <a href="cookbook.html">CookBook</a>
+            </li>
           </ul>
         </div>
         <div class="top-bar-right">
           <ul class="menu">
-            <li><input type="search" placeholder="Search"></li>
+            <li><input type="search" id = "search-bar" placeholder="Search"></li>
             <li><button type="button" class="button success">Search</button></li>
           </ul>
         </div>
       </div>
     
+      <form>
+        <div class="grid-container search">
+          <div class="grid-x grid-padding-x">
+            <div class="medium-4 cell">
+              <label>Search by cuisine (Chinese, pizza, etc)
+                <input type="text" placeholder="Cuisine">
+              </label>
+            </div>
+            <div class="medium-4 cell">
+              <label>Search by ingredient
+                <input type="text" placeholder="ingredient">
+              </label>
+            </div>
+            <div class = "medium-4 cell">
+              <label>How many results displayed?
+                <select>
+                  <option value="one">1</option>
+                  <option value="five">5</option>
+                  <option value="ten">10</option>
+                  <option value="20">20</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <a class="button small expanded">Search</a>
+
+
+
+      
     <script src="https://code.jquery.com/jquery.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
