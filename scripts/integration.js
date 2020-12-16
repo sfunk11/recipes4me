@@ -12,8 +12,7 @@ $(document).ready(function(){
     };
     
     $.ajax(settings).done(function (response) {
-        let results = response.results;
-        console.log(results);
+        console.log(response);
     });
     // mycookbook.io
 // const settings = {
@@ -33,26 +32,24 @@ $(document).ready(function(){
 // 	console.log(response);
 // });
 
-// The mealdb.com search by name or ingredient
-let searchTerm = "curry";
-let searchIngredient = "chicken";
-let queryURL= "https://www.themealdb.com/api/json/v1/1/search.php?"
-if ($("#searchName").val().trim() !== ""){ 
-    searchTerm = $("#searchName").val().trim();
-    queryURL += "s=" + searchTerm;
-}else{
-if ($("#searchIngredient").val().trim() !== ""){
-    searchIngredient = $("#searchIngredient").val().trim();
-    queryURL += "i=" + searchIngredient;
-}}
-
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-      console.log(response);
-  });
+// // The mealdb.com search by name or ingredient
+// let searchTerm = "curry";
+// let searchIngredient = "chicken";
+// let queryURL= "https://www.themealdb.com/api/json/v1/1/search.php?"
+// if ($("#searchName").val().trim() !== ""){ 
+//     searchTerm = $("#searchName").val().trim();
+//     queryURL += "s=" + searchTerm;
+// }else
+//     if ($("#searchIngredient").val().trim() !== ""){
+//     searchIngredient = $("#searchIngredient").val().trim();
+//     queryURL += "i=" + searchIngredient;
+// }
+// $.ajax({
+//     url: queryURL,
+//     method: "GET"
+//   }).then(function(response) {
+//       console.log(response);
+//   });
 
 });
 
