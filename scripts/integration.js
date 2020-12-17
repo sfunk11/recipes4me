@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
     // mycookbook.io
 
     let siteURL = "https://www.jamieoliver.com/recipes/vegetables-recipes/superfood-salad/";
@@ -13,6 +14,7 @@ $(document).ready(function(){
 		"x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
 		"x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
 	},
+
 	"data": siteURL
 };
 
@@ -63,6 +65,13 @@ $.ajax(puppySettings).done(function (response) {
     $("#ing").text("Ingredients: "+ results[i].ingredients)
     }
 
+let puppyQueryURL = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=" + searchIngredient + "&q=" + searchTerm
+$.ajax({
+    url: puppyQueryURL,
+    method: "GET"
+  }).then(function(response) {
+      console.log(response);
+  });
 });
 }
 
