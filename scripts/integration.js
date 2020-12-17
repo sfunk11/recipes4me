@@ -56,6 +56,14 @@ const puppySettings = {
 
 $.ajax(puppySettings).done(function (response) {
     console.log(JSON.parse(response));
-
+    response = JSON.parse(response);
+    results = response.results;
+    
+    for(var i =0; i < results.length; i++){
+    $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
+        $(".card-divider").html(results[i].title);
+    $("#link").attr("href", results[i].href);
+    $("#ing").text("Ingredients: "+ results[i].ingredients)
+    }
 });
 });
