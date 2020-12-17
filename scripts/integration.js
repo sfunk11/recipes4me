@@ -1,8 +1,4 @@
 $(document).ready(function(){
-//  recipe puppy search by main ingredient or name
-let searchTerm = "curry";
-let searchIngredient = "chicken";
-
 
     // mycookbook.io
 
@@ -24,7 +20,9 @@ $.ajax(settings).done(function (response) {
 	console.log(response);
 });
 
-// // The mealdb.com search by name or ingredient
+function searchForRecipe(searchString){
+let searchTerm = searchString;
+let searchIngredient = "chicken";
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
 
 if ($("#searchName").val().trim() !== "" && $("#searchIngredient").val().trim() !== ""){
@@ -35,7 +33,6 @@ if ($("#searchName").val().trim() !== "" && $("#searchIngredient").val().trim() 
 }else
 if ($("#searchName").val().trim() !== ""){ 
     searchTerm = $("#searchName").val().trim();
-    queryURL += "s=" + searchTerm;
     puppyURL += "q=" + searchTerm;
 }else
     if ($("#searchIngredient").val().trim() !== ""){
@@ -61,9 +58,13 @@ $.ajax(puppySettings).done(function (response) {
     
     for(var i =0; i < results.length; i++){
     $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
-        $(".card-divider").html(results[i].title);
+    $(".card-divider").html(results[i].title);
     $("#link").attr("href", results[i].href);
     $("#ing").text("Ingredients: "+ results[i].ingredients)
     }
+
 });
+}
+
 });
+
