@@ -10,16 +10,27 @@ body {
 
 .grid-container {
     position: relative;
-    top: 25px;
+    top: 10px;
     background-color:rgba(129, 127, 127, 0.788);
     color:rgb(255, 255, 255);
     padding: 05px;
   }
 .expanded{
   position: relative;
-  top:30px;
+  top:20px;
   background-color:rgba(129, 127, 127, 0.788);
   
 .top-bar-middle{
   left: -50px;
+}
+
+#recipe-cards{
+  position:relative;
+  top: 40px;
+  left:300px;
+  background-color:rgba(129, 127, 127, 0.788);
+  
+}
+#link{
+  color:red;
 }

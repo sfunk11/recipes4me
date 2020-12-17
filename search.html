@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Recipes4Me</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://image.flaticon.com/icons/png/128/857/857681.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="css/search.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Recipes4Me</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="icon" type="image/png" href="https://image.flaticon.com/icons/png/128/857/857681.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="top-bar">
+</head>
 
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text"></li>
-          <li><a href="index.html">Recipes4Me</a></li>
-        </ul>
-        
-      </div>
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><input type="search" placeholder="Search" /></li>
-          <li><button type="button" class="button success ">Search</button></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li>
-            <a href="cookbook.html">CookBook</a>
-          </li>
-        </ul>
+<body>
+  <div class="top-bar">
+
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text"></li>
+        <li><a href="index.html">Recipes4Me</a></li>
+      </ul>
+
+
+    </div>
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li><input type="search" placeholder="Search" id="searchName" /></li>
+        <li><button type="button" class="button success " id = "searchBtn">Search</button></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li>
+          <a href="cookbook.html">CookBook</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <form>
+    <div class="grid-container search">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-3 cell">
+          <label>Search by cuisine (Chinese, pizza, etc)
+            <input type="text" placeholder="Cuisine" id="searchCuisine">
+          </label>
+        </div>
+        <div class="medium-3 cell">
+          <label>Search by ingredient
+            <input type="text" placeholder="ingredient" id="searchIngredient">
+          </label>
+
+        </div>
+        <div class="medium-3 cell">
+          <label id="resultSelect">How many results displayed?
+            <select>
+              <option value="one">1</option>
+              <option value="five">5</option>
+              <option value="ten">10</option>
+              <option value="20">20</option>
+            </select>
+          </label>
+        </div>
+        <div class="medium-3 cell">
+          
+        </div>
       </div>
     </div>
-    
-      <form>
-        <div class="grid-container search">
-          <div class="grid-x grid-padding-x">
-            <div class="medium-4 cell">
-              <label>Search by cuisine (Chinese, pizza, etc)
-                <input type="text" placeholder="Cuisine">
-              </label>
-            </div>
-            <div class="medium-4 cell">
-              <label>Search by ingredient
-                <input type="text" placeholder="ingredient">
-              </label>
-            </div>
-            <div class = "medium-4 cell">
-              <label>How many results displayed?
-                <select>
-                  <option value="one">1</option>
-                  <option value="five">5</option>
-                  <option value="ten">10</option>
-                  <option value="20">20</option>
-                </select>
-              </label>
-            </div>
-          </div>
-        </div>
-      </form>
-      <a class="button small expanded">Search</a>
+  </form>
+  <a class="button small expanded">Search</a>
 
+  <div class="card" id="recipe-cards" style = "width: 600px;">
+    <div class="card-divider">
+      Recipe Title will go here
+    </div>
+    <img src="assets\cook.jpg" style="height: 75px; width:75px;">
+    <div class="card-section">
+      <a href="#" id="link">link to website</a>
+      <p id="ing">ingredients list for food goes here
+      </p>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <script src="./scripts/integration.js"></script>
+</body>
 
 
       
@@ -89,4 +103,5 @@
       crossorigin="anonymous"
     ></script>
   </body>
+
 </html>
