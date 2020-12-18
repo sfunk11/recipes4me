@@ -24,20 +24,24 @@ function searchForRecipe(searchString){
 let searchTerm = searchString;
 let searchIngredient = "chicken";
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
-
-if ($("#searchName").text().trim() !== "" && $("#searchIngredient").val().trim() !== ""){
-    searchTerm = $("#searchName").text().trim();
-    puppyURL += "q=" + searchTerm;
-    searchIngredient = $("#searchIngredient").val().trim();
-    puppyURL += "&i=" + searchIngredient;
-}else
-if ($("#searchName").val().trim() !== ""){ 
-    searchTerm = $("#searchName").text().trim();
-    puppyURL += "q=" + searchTerm;
-}else
-    if ($("#searchIngredient").val().trim() !== ""){
-    searchIngredient = $("#searchIngredient").text().trim();
-    puppyURL += "i=" + searchIngredient;
+let searchName = $("#searchName");
+let ingredientInput = $("#searchIngredient");
+if (searchName.val().trim() !== "" && ingredientInput.val() !== ""){
+     searchTerm = searchName.val().trim();
+    puppyURL = puppyURL + "q=" + searchTerm;
+    // searchIngredient = ingredientInput.val();
+    // puppyURL = puppyURL + "&i=" + searchIngredient;
+    }
+    else if (searchName.val().trim() !== ""){ 
+        searchName = $("#searchName");
+        searchTerm = searchName.val().trim();
+    puppyURL = puppyURL +  "q=" + searchTerm;
+}
+// else if (ingredientInput.val().trim() !== ""){
+//     searchIngredient = ingredientInput.val();
+//     puppyURL = puppyURL + "i=" + searchIngredient;}
+else{
+    puppyURL = puppyURL +  "q=" + searchTerm;
 }
 
 const puppySettings = {
@@ -60,7 +64,9 @@ $.ajax(puppySettings).done(function (response) {
 
 
 function displayResults(){
-    let results = JSON.parse(localStorage.getItem("searchResults"));
+    let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+
+    results = savedResults.results;
     for(var i =0; i < results.length; i++){
     $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
     $(".card-divider").html(results[i].title);

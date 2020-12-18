@@ -1,7 +1,8 @@
 
    
     $("#searchBtn").on("click", function(){
-        var searchString = $("#searchName").text().trim();
+        var searchName = $("#searchName");
+        var searchString = searchName.val().trim();
         console.log(searchString);
         searchForRecipe(searchString);
         location.href = "./search.html";
