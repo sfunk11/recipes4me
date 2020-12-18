@@ -1,9 +1,11 @@
-$(document).ready(function(){
+
    
     $("#searchBtn").on("click", function(){
-        searchString = $("#searchName").val().trim();
+        var searchName = $("#searchName");
+        var searchString = searchName.val().trim();
         console.log(searchString);
+        searchForRecipe(searchString);
         location.href = "./search.html";
     
     });
-});
+
