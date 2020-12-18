@@ -1,6 +1,8 @@
 
 
+
     // mycookbook.io
+
 
     // let siteURL = "https://www.jamieoliver.com/recipes/vegetables-recipes/superfood-salad/";
     // const settings = {
@@ -15,6 +17,7 @@
 	// },
 	// "data": siteURL
     // };
+
 
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
@@ -74,7 +77,7 @@ function displayResults(){
     $("#ing").text("Ingredients: "+ results[i].ingredients)
     }
 
-}
+
 
 $(document).ready(displayResults());
 
