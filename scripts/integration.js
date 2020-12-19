@@ -5,7 +5,7 @@
 
 var recipeList = [];
 function getRecipeInfo(recipeURL){
-    let siteURL = "";
+    let siteURL = recipeURL;
     const settings = {
 	"async": true,
 	"crossDomain": true,
@@ -18,7 +18,7 @@ function getRecipeInfo(recipeURL){
 	},
 	"data": siteURL
     };
-  };
+  
 
     $.ajax(settings).done(function (response) {
       
@@ -30,10 +30,14 @@ function getRecipeInfo(recipeURL){
         "instructions": response[0].instructions,
         "recipeURL": response[0].url,
       }
-      console.log(recipe);
-      recipeList.push(recipe);
+      
+      recipeList = JSON.parse(localStorage.getItem("recipes"));
 
+      recipeList.push(recipe);
+      console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
+    }
+    )};
 
     //  var stack = JSON.parse(localStorage.getItem("stack"));
     //   for (var i = 0; i < stack.length; i++) {
@@ -59,7 +63,7 @@ function getRecipeInfo(recipeURL){
   //         method: "GET",
   //       });
   //     });
-  });
+
 
 function searchForRecipe(searchString){
 let searchTerm = searchString;
