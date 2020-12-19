@@ -4,7 +4,7 @@
         var searchName = $("#searchName");
         var searchString = searchName.val().trim();
         console.log(searchString);
-        searchForRecipe(searchString);
+        localStorage.setItem("searchTerm", searchString);
         location.href = "./search.html";
     
     });

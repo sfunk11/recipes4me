@@ -19,36 +19,36 @@
     // };
 
 
-    $.ajax(settings).done(function (response) {
-      console.log(response);
+    // $.ajax(settings).done(function (response) {
+    //   console.log(response);
 
-      localStorage.setItem("stack",JSON.stringify(response)
+    //   localStorage.setItem("stack",JSON.stringify(response));
 
-      var stack = JSON.parse(localStorage.getItem("stack"));
-      for (var i = 0; i < stack.length; i++) {
-        var stack = $(
-          "<tr><td class='stack' data-stack='" +
-          stack[i] +
-            "'>" +
-            stack[i] +
-            "</td></tr>"
-        );
-        $("#stack").append(stack);
-      }
-      $(document).on("click", ".stack", function () {
-        var stack = $(this).data("stack");
-        var APIKey = "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe";
-        var queryURL =
-          "https://recipe-puppy.p.rapidapi.com/?" +
-          stack +
-          "&appid=" +
-          APIKey;
-        $.ajax({
-          url: queryURL,
-          method: "GET",
-        });
-      });
-  });
+  //    var stack = JSON.parse(localStorage.getItem("stack"));
+  //     for (var i = 0; i < stack.length; i++) {
+  //       var stack = $(
+  //         "<tr><td class='stack' data-stack='" +
+  //         stack[i] +
+  //           "'>" +
+  //           stack[i] +
+  //           "</td></tr>"
+  //       );
+  //       $("#stack").append(stack);
+  //     }
+  // //     $(document).on("click", ".stack", function () {
+  // //       var stack = $(this).data("stack");
+  // //       var APIKey = "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe";
+  // //       var queryURL =
+  // //         "https://recipe-puppy.p.rapidapi.com/?" +
+  // //         stack +
+  // //         "&appid=" +
+  // //         APIKey;
+  // //       $.ajax({
+  // //         url: queryURL,
+  // //         method: "GET",
+  // //       });
+  // //     });
+  // // });
 
 function searchForRecipe(searchString){
 let searchTerm = searchString;
@@ -87,28 +87,27 @@ const puppySettings = {
 
 $.ajax(puppySettings).done(function (response) {
     console.log(JSON.parse(response));
-    response = JSON.parse(response);
-    localStorage.setItem("searchResults", JSON.stringify(response));
+    localStorage.setItem("searchResults", response);
+
 });
 }
 
+// function displayResults(){
+//     let savedResults = JSON.parse(localStorage.getItem("searchResults"));
 
-function displayResults(){
-    let savedResults = JSON.parse(localStorage.getItem("searchResults"));
-
-    results = savedResults.results;
-    for(var i =0; i < results.length; i++){
-    $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
-    $(".card-divider").html(results[i].title);
-    $("#thumb").attr("src",results[i].thumbnail);
-        $(".card-divider").html(results[i].title);
-    $("#link").attr("href", results[i].href);
-    $("#ing").text("Ingredients: "+ results[i].ingredients)
-    }
-
+//     results = savedResults.results;
+//     for(var i =0; i < results.length; i++){
+//     $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
+//     $(".card-divider").html(results[i].title);
+//     $("#thumb").attr("src",results[i].thumbnail);
+//         $(".card-divider").html(results[i].title);
+//     $("#link").attr("href", results[i].href);
+//     $("#ing").text("Ingredients: "+ results[i].ingredients)
+//     }
 
 
-$(document).ready(displayResults());
+
+// $(document).ready(displayResults());
 
 
-}
+  

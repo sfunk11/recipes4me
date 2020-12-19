@@ -1,8 +1,11 @@
 $(document).ready(function(){
+    searchString = localStorage.getItem("searchTerm");
+    searchForRecipe(searchString);
 
-   
-        
-      function infoGen(n){  
+    let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+
+    results = savedResults.results;
+    function infoGen(n){  
             for(var i =0; i < n; i++){
              var img= $("#thumb").attr("src",results[i].thumbnail);
              var cardTitle = $("#card-title").html(results[i].title);
