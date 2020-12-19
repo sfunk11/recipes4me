@@ -19,9 +19,36 @@
     // };
 
 
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-// });
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+
+      localStorage.setItem("stack",JSON.stringify(response)
+
+      var stack = JSON.parse(localStorage.getItem("stack"));
+      for (var i = 0; i < stack.length; i++) {
+        var stack = $(
+          "<tr><td class='stack' data-stack='" +
+          stack[i] +
+            "'>" +
+            stack[i] +
+            "</td></tr>"
+        );
+        $("#stack").append(stack);
+      }
+      $(document).on("click", ".stack", function () {
+        var stack = $(this).data("stack");
+        var APIKey = "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe";
+        var queryURL =
+          "https://recipe-puppy.p.rapidapi.com/?" +
+          stack +
+          "&appid=" +
+          APIKey;
+        $.ajax({
+          url: queryURL,
+          method: "GET",
+        });
+      });
+  });
 
 function searchForRecipe(searchString){
 let searchTerm = searchString;
