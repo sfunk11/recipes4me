@@ -9,3 +9,9 @@
     
     });
 
+    $("#cookbookBtn").on("click", function(){
+        var inputURL = $("#inputURL");
+        var recipeURL = inputURL.val().trim();
+        localStorage.setItem("recipeURL", recipeURL);
+        location.href = "./cookbook.html";
+    })
