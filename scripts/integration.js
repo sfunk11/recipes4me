@@ -5,7 +5,7 @@
 
 var recipeList = [];
 function getRecipeInfo(recipeURL){
-    let siteURL = "";
+    let siteURL = recipeURL;
     const settings = {
 	"async": true,
 	"crossDomain": true,
@@ -18,7 +18,7 @@ function getRecipeInfo(recipeURL){
 	},
 	"data": siteURL
     };
-  };
+  
 
     $.ajax(settings).done(function (response) {
       
@@ -34,33 +34,8 @@ function getRecipeInfo(recipeURL){
       recipeList.push(recipe);
 
       localStorage.setItem("recipes",JSON.stringify(recipeList));
-
-    //  var stack = JSON.parse(localStorage.getItem("stack"));
-    //   for (var i = 0; i < stack.length; i++) {
-    //     var stack = $(
-    //       "<tr><td class='stack' data-stack='" +
-    //       stack[i] +
-    //         "'>" +
-    //         stack[i] +
-    //         "</td></tr>"
-    //     );
-    //     $("#stack").append(stack);
-    //   }
-  //     $(document).on("click", ".stack", function () {
-  //       var stack = $(this).data("stack");
-  //       var APIKey = "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe";
-  //       var queryURL =
-  //         "https://recipe-puppy.p.rapidapi.com/?" +
-  //         stack +
-  //         "&appid=" +
-  //         APIKey;
-  //       $.ajax({
-  //         url: queryURL,
-  //         method: "GET",
-  //       });
-  //     });
-  });
-
+    });
+};
 function searchForRecipe(searchString){
 let searchTerm = searchString;
 let searchIngredient = "chicken";
@@ -119,6 +94,4 @@ $.ajax(puppySettings).done(function (response) {
 
 
 // $(document).ready(displayResults());
-
-
-  
+    ;
