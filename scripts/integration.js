@@ -73,6 +73,8 @@ function displayResults(){
     for(var i =0; i < results.length; i++){
     $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
     $(".card-divider").html(results[i].title);
+    $("#thumb").attr("src",results[i].thumbnail);
+        $(".card-divider").html(results[i].title);
     $("#link").attr("href", results[i].href);
     $("#ing").text("Ingredients: "+ results[i].ingredients)
     }
@@ -82,4 +84,4 @@ function displayResults(){
 $(document).ready(displayResults());
 
 
-
+}

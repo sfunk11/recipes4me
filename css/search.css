@@ -25,8 +25,8 @@ body {
 }
 
 #recipe-cards{
-  position:relative;
-  top: 40px;
+  position: relative;
+  top: 20px;
   left:300px;
   background-color:rgba(129, 127, 127, 0.788);
   
@@ -34,3 +34,7 @@ body {
 #link{
   color:red;
 }
+#card-title{
+  background-color: rgba(111, 186, 236, .0788);
+}
+
