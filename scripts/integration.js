@@ -3,52 +3,63 @@
 
     // mycookbook.io
 
+var recipeList = [];
+function getRecipeInfo(recipeURL){
+    let siteURL = "";
+    const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
+	"method": "POST",
+	"headers": {
+		"content-type": "application/xml",
+		"x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+		"x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
+	},
+	"data": siteURL
+    };
+  };
 
-    // let siteURL = "https://www.jamieoliver.com/recipes/vegetables-recipes/superfood-salad/";
-    // const settings = {
-	// "async": true,
-	// "crossDomain": true,
-	// "url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
-	// "method": "POST",
-	// "headers": {
-	// 	"content-type": "application/xml",
-	// 	"x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
-	// 	"x-rapidapi-host": "mycookbook-io1.p.rapidapi.com"
-	// },
-	// "data": siteURL
-    // };
+    $.ajax(settings).done(function (response) {
+      
+      var recipe = {
+        "name": response[0].name,
+        "description": response[0].description,
+        "images": response[0].images,
+        "ingredients": response[0].ingredients,
+        "instructions": response[0].instructions,
+        "recipeURL": response[0].url,
+      }
+      console.log(recipe);
+      recipeList.push(recipe);
 
+      localStorage.setItem("recipes",JSON.stringify(recipeList));
 
-    // $.ajax(settings).done(function (response) {
-    //   console.log(response);
-
-    //   localStorage.setItem("stack",JSON.stringify(response));
-
-  //    var stack = JSON.parse(localStorage.getItem("stack"));
-  //     for (var i = 0; i < stack.length; i++) {
-  //       var stack = $(
-  //         "<tr><td class='stack' data-stack='" +
-  //         stack[i] +
-  //           "'>" +
-  //           stack[i] +
-  //           "</td></tr>"
-  //       );
-  //       $("#stack").append(stack);
-  //     }
-  // //     $(document).on("click", ".stack", function () {
-  // //       var stack = $(this).data("stack");
-  // //       var APIKey = "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe";
-  // //       var queryURL =
-  // //         "https://recipe-puppy.p.rapidapi.com/?" +
-  // //         stack +
-  // //         "&appid=" +
-  // //         APIKey;
-  // //       $.ajax({
-  // //         url: queryURL,
-  // //         method: "GET",
-  // //       });
-  // //     });
-  // // });
+    //  var stack = JSON.parse(localStorage.getItem("stack"));
+    //   for (var i = 0; i < stack.length; i++) {
+    //     var stack = $(
+    //       "<tr><td class='stack' data-stack='" +
+    //       stack[i] +
+    //         "'>" +
+    //         stack[i] +
+    //         "</td></tr>"
+    //     );
+    //     $("#stack").append(stack);
+    //   }
+  //     $(document).on("click", ".stack", function () {
+  //       var stack = $(this).data("stack");
+  //       var APIKey = "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe";
+  //       var queryURL =
+  //         "https://recipe-puppy.p.rapidapi.com/?" +
+  //         stack +
+  //         "&appid=" +
+  //         APIKey;
+  //       $.ajax({
+  //         url: queryURL,
+  //         method: "GET",
+  //       });
+  //     });
+  });
 
 function searchForRecipe(searchString){
 let searchTerm = searchString;
