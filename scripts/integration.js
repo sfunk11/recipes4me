@@ -39,12 +39,14 @@ function getRecipeInfo(recipeURL){
       recipeList.push(recipe);
       console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
+
     }}
     )};
 
 
 
 function searchForRecipe(searchString, ingString){
+
 let searchTerm = searchString;
 let searchIngredient = ingString;
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
@@ -102,6 +104,4 @@ $.ajax(puppySettings).done(function (response) {
 
 
 // $(document).ready(displayResults());
-
-
-  
+    ;
