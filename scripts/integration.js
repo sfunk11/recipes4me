@@ -87,21 +87,22 @@ $.ajax(puppySettings).done(function (response) {
 
 });
 }
+function getRandomRecipes(pageID){
+    randomURL = "https://recipe-puppy.p.rapidapi.com/?p=" + pageID;
+    const randomSettings = {
+     "async": true,
+     "crossDomain": true,
+     "url": randomURL,
+     "method": "GET",
+     "headers": {
+        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
+    }
+};
 
-// function displayResults(){
-//     let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+$.ajax(randomSettings).done(function (response) {
+    console.log(JSON.parse(response));
+    localStorage.setItem("searchResults", response);
 
-//     results = savedResults.results;
-//     for(var i =0; i < results.length; i++){
-//     $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
-//     $(".card-divider").html(results[i].title);
-//     $("#thumb").attr("src",results[i].thumbnail);
-//         $(".card-divider").html(results[i].title);
-//     $("#link").attr("href", results[i].href);
-//     $("#ing").text("Ingredients: "+ results[i].ingredients)
-//     }
-
-
-
-// $(document).ready(displayResults());
-    ;
+});
+}
