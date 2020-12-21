@@ -1,43 +1,81 @@
-$(document).ready(function(){
-    searchString = localStorage.getItem("searchTerm");
+
+    
+     function infoGen() {
+        let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+        results = savedResults.results;
+        $("#recipe-cards").empty();
+
+        for (var i = 0; i < 10; i++) {
+            newCardTemplate = `<div class='card' style='width: 600px;'> <div class = 'card-divider'><a id='card-title-${i}' href= '#'></a></div><img src='./assets/cook.jpg' id='thumb-${i}' style='height: 75px; width:75px; float: left;'> <div class='card-section' style='float: right;'><a class = 'button save' id='${i}'>Save to Cookbook</a><p id='ing-${i}'></p></div> </div>`
+            var newCard = $(newCardTemplate);
+            $("#recipe-cards").append(newCard);
+            thumbID = "#thumb-" + i;
+            if (results[i].thumbnail != ""){
+                $(thumbID).attr("src", results[i].thumbnail);
+            } else {
+                $(thumbID).attr("style", "display: none")
+            }
+            titleID = "#card-title-" + i;
+            $(titleID).html(results[i].title);
+           $(titleID).attr("href", results[i].href);
+            imgID = "#ing-" + i;
+            $(imgID).text("Ingredients: " + results[i].ingredients)
+        }};
+
+ $(document).ready(function () {
+     searchString = localStorage.getItem("searchTerm");
     searchForRecipe(searchString);
+     infoGen();  
+    });
 
-    let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+$("#randomizer").click(function(){
+    pageID = Math.floor(Math.random() *100);
+    console.log(pageID);
+    getRandomRecipes(pageID);
+    infoGen();
+})
 
-    results = savedResults.results;
-    function infoGen(n){  
-            for(var i =0; i < n; i++){
-             var img= $("#thumb").attr("src",results[i].thumbnail);
-             var cardTitle = $("#card-title").html(results[i].title);
-             var link = $("#link").attr("href", results[i].href);
-             var ing= $("#ing").text("Ingredients: "+ results[i].ingredients)
-             
-             $("#cardTitle").append(cardTitle);
-             $("#img").append(img);
-             $("#link").append(link);
-             $("#ing").append(ing);
-         }}
-        
-         var selector = "#selector";
-        if (selector = 1){ 
-            for(i=0; i<1; i++){
-                infoGen(1)
-            }
-        }
-        else if (selector = 5){
-            for(i=0; i<4; I++){
-                infoGen(5)
-            }
-        }   
-        else if (selector = 10){
-            for(i=0; i<9; I++){
-                infoGen(10)
-            }
-        }   
-         else if (selector = 20){
-            for(i=0; i<19; I++){
-                infoGen(20)
-            }
-        }   
- 
+$("#searchBtn").on("click", function(){
+    searchName = $("#searchName");
+    ingredientInput = $("#searchIngredient");
+    searchString = searchName.val().trim();
+    ingString = ingredientInput.val().trim();
+    searchForRecipe(searchString,ingString);
+    infoGen();
 });
+
+$(".save").click(function(event){
+    var id = $(this).attr("id");
+    console.log(id);
+    recipeID = "#card-title-"+ id;
+    saveURL = $(recipeID).attr("href");
+    console.log(saveURL);
+    getRecipeInfo(saveURL);
+});
+
+         
+
+
+    // var selector = "#selector";
+    //if (selector = 1) {
+    //  for (i = 0; i < 1; i++) {
+    //     infoGen(1)
+    //    }
+    //}
+    //else if (selector = 5) {
+    //   for (i = 0; i < 4; I++) {
+    //      infoGen(5)
+    // }
+    //}
+    //else if (selector = 10) {
+    //   for (i = 0; i < 9; I++) {
+    //      infoGen(10)
+    // }
+    //}
+    //else if (selector = 20) {
+    //   for (i = 0; i < 19; I++) {
+    //      infoGen(20)
+    // }
+    //}
+
+

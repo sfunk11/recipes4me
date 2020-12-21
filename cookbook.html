@@ -35,8 +35,8 @@
       </div>
       <div class="top-bar-left">
         <ul class="menu">
-          <li><input type="search" placeholder="Search" /></li>
-          <li><button type="button" class="button success">Search</button></li>
+          <li><input type="search" placeholder="Search" id = "searchName"/></li>
+          <li><button type="button" class="button success" id="searchBtn">Search</button></li>
         </ul>
       </div>
       <div class="top-bar-right">
@@ -52,15 +52,31 @@
     <table id="stack" class= "recipeList">
       <tr style="color:rgba(255, 255, 255, 0.582);">
         <th>Recipe</th>
-        <th>Cuisine</th>
-        <th>Ingredients</th>
+        <th></th>
       </tr>
       
     
      
     </table>
 
-    <table class="recipe">
+    <div class="recipe-Card" >
+      <div class = "card" style="width: 600px;">
+      <div class="card-divider card-name">
+        Recipe Title will go here
+      </div>
+      <img src="assets\cook.jpg" class= "images">
+      <div class="card-section" style="float: right;">
+        <a href="#" id="link">link to website</a>
+        <p id="card-description">ingredients list for food goes here
+        </p>
+     <ul id="card-Ingredients">
+     </ul>
+     <ol id="card-Instructions">
+     </ol>
+      </div>
+    </div> 
+    </div>
+    <!--<table class="recipe">
       <tr>
         <th style="color:rgba(255, 255, 255, 0.548);">
           Recipe
@@ -78,7 +94,7 @@
       </tr>
     
     </tr>
-    </table>
+    </table>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
