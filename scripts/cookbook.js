@@ -4,6 +4,20 @@ $(document).ready(function(){
 recipeURL = localStorage.getItem("recipeURL");
 getRecipeInfo(recipeURL);
 
+
+
+
+
+$("#searchBtn").on("click", function(){
+    var searchName = $("#searchName");
+    var searchString = searchName.val().trim();
+    console.log(searchString);
+    localStorage.setItem("searchTerm", searchString);
+    location.href = "./search.html";
+
+});
+
+
    var recipeList = JSON.parse(localStorage.getItem("recipes"));
     for (var i = 0; i < recipeList.length; i++) {
     var recipeTable = $(
@@ -43,3 +57,4 @@ recipeList=JSON.parse(localStorage.getItem("recipes"))
 // cardInstructions.text(`Instructions: ${instructions}`);
 // recipeCardEl.append(cardName, cardImages, cardDescription, cardIngredients, cardInstructions);
 });
+

@@ -30,32 +30,42 @@ function getRecipeInfo(recipeURL){
         "instructions": response[0].instructions,
         "recipeURL": response[0].url,
       }
-      console.log(recipe);
-      recipeList.push(recipe);
+      
+      recipeList = JSON.parse(localStorage.getItem("recipes"));
 
+      if (recipeList.includes(recipe)){
+        return;
+      }else{
+      recipeList.push(recipe);
+      console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
-    });
-};
-function searchForRecipe(searchString){
+
+    }}
+    )};
+
+
+
+function searchForRecipe(searchString, ingString){
+
 let searchTerm = searchString;
-let searchIngredient = "chicken";
+let searchIngredient = ingString;
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
 let searchName = $("#searchName");
 let ingredientInput = $("#searchIngredient");
 if (searchName.val().trim() !== "" && ingredientInput.val() !== ""){
      searchTerm = searchName.val().trim();
     puppyURL = puppyURL + "q=" + searchTerm;
-    // searchIngredient = ingredientInput.val();
-    // puppyURL = puppyURL + "&i=" + searchIngredient;
+    searchIngredient = ingredientInput.val();
+    puppyURL = puppyURL + "&i=" + searchIngredient;
     }
     else if (searchName.val().trim() !== ""){ 
         searchName = $("#searchName");
         searchTerm = searchName.val().trim();
     puppyURL = puppyURL +  "q=" + searchTerm;
 }
-// else if (ingredientInput.val().trim() !== ""){
-//     searchIngredient = ingredientInput.val();
-//     puppyURL = puppyURL + "i=" + searchIngredient;}
+else if (ingredientInput.val().trim() !== ""){
+    searchIngredient = ingredientInput.val();
+    puppyURL = puppyURL + "i=" + searchIngredient;}
 else{
     puppyURL = puppyURL +  "q=" + searchTerm;
 }

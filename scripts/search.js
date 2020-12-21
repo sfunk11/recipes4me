@@ -14,6 +14,18 @@ $(document).ready(function () {
             var ingEl = $("<p>").attr("id", "ing");
            // var ing = $("#ing").text("Ingredients: " + results[i].ingredients)
 
+    let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+    results = savedResults.results;
+
+    $("#searchBtn").on("click", function(){
+        searchName = $("#searchName");
+        ingredientInput = $("#searchIngredient");
+        searchString = searchName.val().trim();
+        ingString = ingredientInput.val().trim();
+        searchForRecipe(searchString,ingString);
+    })
+
+
            // $("#card-title").append(cardTitle);
             //$("#thumb").append(img);
             //$("#link").append(link);
@@ -55,3 +67,4 @@ $(document).ready(function () {
     // }
     //}
 );
+
