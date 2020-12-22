@@ -14,28 +14,22 @@ body {
 #stack{
   position: absolute;
   top: 7.8%;
-  left: 50%;
-  height: 100px;
+  left: 87%;
+  min-height: 92%;
   font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-}
-#stack td, #customers th {
-  border: 1px solid rgba(221, 221, 221, 0.589);
-  padding: 8px;
+  width: 13%;
 }
 
-#stack tr:nth-child(even){background-color: #f2f2f29c;}
+#stack tr:nth-child(even){background-color: #ffffff71;}
 
-#stack tr:hover {background-color: rgba(221, 221, 221, 0.589);}
+#stack tr:hover {background-color: rgba(25, 52, 175, 0.589);}
 
 th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  border: 1px solid rgb(255, 255, 255);
   text-align: left;
-  background-color: #a774a8;
+  background-color: #9726c4;
+  width: 100%;
 }
-
 
 .scroll {
   overflow-y:auto;
@@ -45,11 +39,19 @@ th {
 
 }
 
-table .scroll {
-  height: 900px;
+table {
+  max-height: 900px;
   overflow-y:auto;
   background-color: #fffdfd;
   color: #3B3C3E;
 }
-  
 
+.button {
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 2%;
+}
+
+td {
+  width: 50%;
+}
