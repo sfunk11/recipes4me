@@ -44,7 +44,8 @@ $("#searchBtn").on("click", function(){
     infoGen();
 });
 
-$(".save").click(function(event){
+$(document).on("click",".save", function(){
+    console.log(this);
     var id = $(this).attr("id");
     console.log(id);
     recipeID = "#card-title-"+ id;
