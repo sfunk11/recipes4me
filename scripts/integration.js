@@ -79,7 +79,7 @@ else{
 }
 
 const puppySettings = {
-    "async": true,
+    "async": false,
     "crossDomain": true,
     "url": puppyURL,
     "method": "GET",
@@ -98,7 +98,7 @@ $.ajax(puppySettings).done(function (response) {
 function getRandomRecipes(pageID){
     randomURL = "https://recipe-puppy.p.rapidapi.com/?p=" + pageID;
     const randomSettings = {
-     "async": true,
+     "async": false,
      "crossDomain": true,
      "url": randomURL,
      "method": "GET",
