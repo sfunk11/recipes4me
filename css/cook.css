@@ -12,7 +12,6 @@ body {
 }
 
 #stack{
-  overflow-y:scroll;
   position: absolute;
   top: 7.8%;
   left: 50%;
@@ -34,20 +33,23 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #841388;
+  background-color: #a774a8;
 }
 
-.recipe {
-  overflow-y:scroll;
-  border-collapse: collapse;
-  width: 50%;
-}
-  
-#recipe th, td {
-  text-align: left;
-  padding: 8px;
+
+.scroll {
+  overflow-y:auto;
+  max-height: 400px;
+  background-color: #fffdfd;
+  color: #3B3C3E;
 
 }
+
+table .scroll {
+  height: 900px;
+  overflow-y:auto;
+  background-color: #fffdfd;
+  color: #3B3C3E;
+}
   
-#recipe tr:nth-child(even){background-color: #f2f2f281}
 
