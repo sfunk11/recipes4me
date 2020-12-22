@@ -39,7 +39,7 @@ $("#searchBtn").on("click", function(){
     searchName = $("#searchName");
     ingredientInput = $("#searchIngredient");
     searchString = searchName.val();
-    ingString = ingredientInput.val().trim();
+    ingString = ingredientInput.val();
     searchForRecipe(searchString,ingString);
     infoGen();
 });
@@ -57,26 +57,5 @@ $(document).on("click",".save", function(){
          
 
 
-    // var selector = "#selector";
-    //if (selector = 1) {
-    //  for (i = 0; i < 1; i++) {
-    //     infoGen(1)
-    //    }
-    //}
-    //else if (selector = 5) {
-    //   for (i = 0; i < 4; I++) {
-    //      infoGen(5)
-    // }
-    //}
-    //else if (selector = 10) {
-    //   for (i = 0; i < 9; I++) {
-    //      infoGen(10)
-    // }
-    //}
-    //else if (selector = 20) {
-    //   for (i = 0; i < 19; I++) {
-    //      infoGen(20)
-    // }
-    //}
 
 
