@@ -25,14 +25,15 @@ function getingredients(ingredients){
  }
 }
  function getinstructions(instructions){
-    for (var i = 0; i < instructions.length; i ++) {
+
+    for (var i = 0; i < instructions[0].steps.length; i++) {
         instructionsEl = $("<li>")
         $(instructionsEl).text(instructions[0].steps[i])
         $("#card-Instructions").append(instructionsEl)
     }
 }
 function displayrecipe(recipe){
-    console.log(recipe);
+   
     $(".card-name").text(recipe.name);
     $("#link").attr("href", recipe.recipeURL);
     $("#card-description").text(recipe.description);
@@ -41,18 +42,14 @@ function displayrecipe(recipe){
 }
 
 $(document).on("click",".recipeList", function(){
-    console.log(this);
     recipeID = $(this).attr("data-recipeList");
-    console.log(recipeID);
     recipeList=JSON.parse(localStorage.getItem("recipes"))
-    console.log(recipeList[recipeID]);
     displayrecipe(recipeList[recipeID]);
 });
 
 $("#searchBtn").on("click", function(){
     var searchName = $("#searchName");
     var searchString = searchName.val().trim();
-    console.log(searchString);
     localStorage.setItem("searchTerm", searchString);
     location.href = "./search.html";
 

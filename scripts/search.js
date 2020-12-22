@@ -38,13 +38,14 @@ $("#randomizer").click(function(){
 $("#searchBtn").on("click", function(){
     searchName = $("#searchName");
     ingredientInput = $("#searchIngredient");
-    searchString = searchName.val().trim();
+    searchString = searchName.val();
     ingString = ingredientInput.val().trim();
     searchForRecipe(searchString,ingString);
     infoGen();
 });
 
-$(".save").click(function(event){
+$(document).on("click",".save", function(){
+    console.log(this);
     var id = $(this).attr("id");
     console.log(id);
     recipeID = "#card-title-"+ id;
