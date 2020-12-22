@@ -25,7 +25,7 @@ function getingredients(ingredients){
  }
 }
  function getinstructions(instructions){
-    for (var i = 0; i < instructions.length; i++) {
+    for (var i = 0; i < instructions[0].steps.length; i++) {
         instructionsEl = $("<li>")
         $(instructionsEl).text(instructions[0].steps[i])
         $("#card-Instructions").append(instructionsEl)
