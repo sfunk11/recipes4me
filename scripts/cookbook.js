@@ -18,14 +18,14 @@ $(document).ready(function(){
 });
 
 function getingredients(ingredients){
- for (var i = 0; i < ingredients.length; i++) {
+ for (var i = 0; i < ingredients.length; i ++) {
      ingredientEl = $("<li>")
      $(ingredientEl).text(ingredients[i])
      $("#card-Ingredients").append(ingredientEl)
  }
 }
  function getinstructions(instructions){
-    for (var i = 0; i < instructions.length; i++) {
+    for (var i = 0; i < instructions.length; i ++) {
         instructionsEl = $("<li>")
         $(instructionsEl).text(instructions[0].steps[i])
         $("#card-Instructions").append(instructionsEl)
