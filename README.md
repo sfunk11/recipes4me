@@ -12,8 +12,11 @@ Group project #1
 - CSS
 - JavaScript
 - JQuery
-- mycookbook-io
-- recipe-puppy
+- MyCookBook.io Api
+- RecipePuppy.com Api
+- Photopea.com
+- Foundation CSS framework
+- Pexels.com Free stock imgs
 
 
 ### App Description

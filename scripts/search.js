@@ -1,36 +1,59 @@
-$(document).ready(function () {
-    searchString = localStorage.getItem("searchTerm");
-    searchForRecipe(searchString);
-    
-    function infoGen(results) {
-        for (var i = 0; i < 10; i++) {
-            var newCard = $("<div>").attr("class","card");
-            var imgEl = $("<img>").attr("id", "thumb");
-            //var img = $("#thumb").attr("src", results[i].thumbnail);
-            var cardTitleEl = $("<h4>").attr("id", "title");
-            //var cardTitle = $("#card-title").html(results[i].title);
-            var linkEl = $("<a>").attr("id", "link");
-           // var link = $("#link").attr("href", results[i].href);
-            var ingEl = $("<p>").attr("id", "ing");
-           // var ing = $("#ing").text("Ingredients: " + results[i].ingredients)
 
-           // $("#card-title").append(cardTitle);
-            //$("#thumb").append(img);
-            //$("#link").append(link);
-            //$("#ing").append(ing);
-            newCard.append(cardTitleEl, imgEl, linkEl, ingEl);
-            $("#recipe-cards").append(newCard);
-            //}
-    }};
-    $("#search2").on("click", function () {
-        let savedResults = JSON.parse(localStorage.getItem("searchResults"));
-        var results = savedResults.results;
-        //for (i = 0; i < 10; i++) {
-            infoGen(results)
-            
-    })
-}
     
+     function infoGen() {
+        let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+        results = savedResults.results;
+        $("#recipe-cards").empty();
+
+        for (var i = 0; i < 10; i++) {
+            newCardTemplate = `<div class='card' style='width: 600px;'> <div class = 'card-divider'><a id='card-title-${i}' href= '#'></a></div><img src='./assets/cook.jpg' id='thumb-${i}' style='height: 75px; width:75px; float: left;'> <div class='card-section' style='float: right;'><a class = 'button save' id='${i}'>Save to Cookbook</a><p id='ing-${i}'></p></div> </div>`
+            var newCard = $(newCardTemplate);
+            $("#recipe-cards").append(newCard);
+            thumbID = "#thumb-" + i;
+            if (results[i].thumbnail != ""){
+                $(thumbID).attr("src", results[i].thumbnail);
+            } else {
+                $(thumbID).attr("style", "display: none")
+            }
+            titleID = "#card-title-" + i;
+            $(titleID).html(results[i].title);
+           $(titleID).attr("href", results[i].href);
+            imgID = "#ing-" + i;
+            $(imgID).text("Ingredients: " + results[i].ingredients)
+        }};
+
+ $(document).ready(function () {
+     searchString = localStorage.getItem("searchTerm");
+    searchForRecipe(searchString);
+     infoGen();  
+    });
+
+$("#randomizer").click(function(){
+    pageID = Math.floor(Math.random() *100);
+    console.log(pageID);
+    getRandomRecipes(pageID);
+    infoGen();
+})
+
+$("#searchBtn").on("click", function(){
+    searchName = $("#searchName");
+    ingredientInput = $("#searchIngredient");
+    searchString = searchName.val().trim();
+    ingString = ingredientInput.val().trim();
+    searchForRecipe(searchString,ingString);
+    infoGen();
+});
+
+$(".save").click(function(event){
+    var id = $(this).attr("id");
+    console.log(id);
+    recipeID = "#card-title-"+ id;
+    saveURL = $(recipeID).attr("href");
+    console.log(saveURL);
+    getRecipeInfo(saveURL);
+});
+
+         
 
 
     // var selector = "#selector";
@@ -54,4 +77,5 @@ $(document).ready(function () {
     //      infoGen(20)
     // }
     //}
-);
+
+

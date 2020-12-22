@@ -30,32 +30,39 @@ function getRecipeInfo(recipeURL){
         "instructions": response[0].instructions,
         "recipeURL": response[0].url,
       }
-      console.log(recipe);
+      if (localStorage.getItem("recipes")){
+      recipeList = JSON.parse(localStorage.getItem("recipes"));
+      }
       recipeList.push(recipe);
-
+      console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
-    });
-};
-function searchForRecipe(searchString){
+
+    }
+    )};
+
+
+
+function searchForRecipe(searchString, ingString){
+
 let searchTerm = searchString;
-let searchIngredient = "chicken";
+let searchIngredient = ingString;
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
 let searchName = $("#searchName");
 let ingredientInput = $("#searchIngredient");
 if (searchName.val().trim() !== "" && ingredientInput.val() !== ""){
      searchTerm = searchName.val().trim();
     puppyURL = puppyURL + "q=" + searchTerm;
-    // searchIngredient = ingredientInput.val();
-    // puppyURL = puppyURL + "&i=" + searchIngredient;
+    searchIngredient = ingredientInput.val();
+    puppyURL = puppyURL + "&i=" + searchIngredient;
     }
     else if (searchName.val().trim() !== ""){ 
         searchName = $("#searchName");
         searchTerm = searchName.val().trim();
     puppyURL = puppyURL +  "q=" + searchTerm;
 }
-// else if (ingredientInput.val().trim() !== ""){
-//     searchIngredient = ingredientInput.val();
-//     puppyURL = puppyURL + "i=" + searchIngredient;}
+else if (ingredientInput.val().trim() !== ""){
+    searchIngredient = ingredientInput.val();
+    puppyURL = puppyURL + "i=" + searchIngredient;}
 else{
     puppyURL = puppyURL +  "q=" + searchTerm;
 }
@@ -77,21 +84,22 @@ $.ajax(puppySettings).done(function (response) {
 
 });
 }
+function getRandomRecipes(pageID){
+    randomURL = "https://recipe-puppy.p.rapidapi.com/?p=" + pageID;
+    const randomSettings = {
+     "async": true,
+     "crossDomain": true,
+     "url": randomURL,
+     "method": "GET",
+     "headers": {
+        "x-rapidapi-key": "5c31647492msh818660de1066881p1c2b68jsn1ca367121afe",
+        "x-rapidapi-host": "recipe-puppy.p.rapidapi.com"
+    }
+};
 
-// function displayResults(){
-//     let savedResults = JSON.parse(localStorage.getItem("searchResults"));
+$.ajax(randomSettings).done(function (response) {
+    console.log(JSON.parse(response));
+    localStorage.setItem("searchResults", response);
 
-//     results = savedResults.results;
-//     for(var i =0; i < results.length; i++){
-//     $(".card-divider").append(`<img src = ${results[i].thumbnail}>`);
-//     $(".card-divider").html(results[i].title);
-//     $("#thumb").attr("src",results[i].thumbnail);
-//         $(".card-divider").html(results[i].title);
-//     $("#link").attr("href", results[i].href);
-//     $("#ing").text("Ingredients: "+ results[i].ingredients)
-//     }
-
-
-
-// $(document).ready(displayResults());
-    ;
+});
+}
