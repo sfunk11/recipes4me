@@ -8,7 +8,7 @@ $(document).ready(function(){
     for (var i = 0; i < recipeList.length; i++) {
      var recipeTable = $("<tr>");
      var recipeName = $("<td>");
-     $(recipeName).attr("class", "button recipeList");
+     $(recipeName).attr("class", "button expanded recipeList");
      
      $(recipeName).attr("data-recipeList", i);
      $(recipeTable).append(recipeName);
