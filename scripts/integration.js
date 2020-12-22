@@ -60,18 +60,18 @@ let searchIngredient = ingString;
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
 let searchName = $("#searchName");
 let ingredientInput = $("#searchIngredient");
-if (searchName.val() !== "" && ingredientInput.val() !== ""){
+if (searchName.val() && ingredientInput.val()){
      searchTerm = searchName.val();
     puppyURL = puppyURL + "q=" + searchTerm;
     searchIngredient = ingredientInput.val();
     puppyURL = puppyURL + "&i=" + searchIngredient;
     }
-    else if (searchName.val() !== ""){ 
+    else if (searchName.val()){ 
         searchName = $("#searchName");
         searchTerm = searchName.val();
     puppyURL = puppyURL +  "q=" + searchTerm;
 }
-else if (ingredientInput.val()!== ""){
+else if (ingredientInput.val()){
     searchIngredient = ingredientInput.val();
     puppyURL = puppyURL + "i=" + searchIngredient;}
 else{
@@ -79,7 +79,7 @@ else{
 }
 
 const puppySettings = {
-    "async": true,
+    "async": false,
     "crossDomain": true,
     "url": puppyURL,
     "method": "GET",
@@ -98,7 +98,7 @@ $.ajax(puppySettings).done(function (response) {
 function getRandomRecipes(pageID){
     randomURL = "https://recipe-puppy.p.rapidapi.com/?p=" + pageID;
     const randomSettings = {
-     "async": true,
+     "async": false,
      "crossDomain": true,
      "url": randomURL,
      "method": "GET",
