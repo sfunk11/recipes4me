@@ -30,17 +30,14 @@ function getRecipeInfo(recipeURL){
         "instructions": response[0].instructions,
         "recipeURL": response[0].url,
       }
-      
+      if (localStorage.getItem("recipes")){
       recipeList = JSON.parse(localStorage.getItem("recipes"));
-
-      if (recipeList.includes(recipe)){
-        return;
-      }else{
+      }
       recipeList.push(recipe);
       console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
 
-    }}
+    }
     )};
 
 
