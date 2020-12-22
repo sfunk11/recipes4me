@@ -38,7 +38,7 @@ $("#randomizer").click(function(){
 $("#searchBtn").on("click", function(){
     searchName = $("#searchName");
     ingredientInput = $("#searchIngredient");
-    searchString = searchName.val().trim();
+    searchString = searchName.val();
     ingString = ingredientInput.val().trim();
     searchForRecipe(searchString,ingString);
     infoGen();

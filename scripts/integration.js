@@ -1,9 +1,16 @@
-
-
+var recipeList = [];
+function searchObject (name){
+    for (i=0; i < recipeList.length; i++){
+        if (recipeList[i].name === name){
+            return true;
+        }
+    }
+    return false;
+}
 
     // mycookbook.io
 
-var recipeList = [];
+
 function getRecipeInfo(recipeURL){
     let siteURL = recipeURL;
     const settings = {
@@ -33,6 +40,10 @@ function getRecipeInfo(recipeURL){
       if (localStorage.getItem("recipes")){
       recipeList = JSON.parse(localStorage.getItem("recipes"));
       }
+      alreadyInList = searchObject(recipe.name);
+      if (alreadyInList){
+          return;
+      }
       recipeList.push(recipe);
       console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
@@ -49,18 +60,18 @@ let searchIngredient = ingString;
 let puppyURL = "https://recipe-puppy.p.rapidapi.com/?";
 let searchName = $("#searchName");
 let ingredientInput = $("#searchIngredient");
-if (searchName.val().trim() !== "" && ingredientInput.val() !== ""){
-     searchTerm = searchName.val().trim();
+if (searchName.val() !== "" && ingredientInput.val() !== ""){
+     searchTerm = searchName.val();
     puppyURL = puppyURL + "q=" + searchTerm;
     searchIngredient = ingredientInput.val();
     puppyURL = puppyURL + "&i=" + searchIngredient;
     }
-    else if (searchName.val().trim() !== ""){ 
+    else if (searchName.val() !== ""){ 
         searchName = $("#searchName");
-        searchTerm = searchName.val().trim();
+        searchTerm = searchName.val();
     puppyURL = puppyURL +  "q=" + searchTerm;
 }
-else if (ingredientInput.val().trim() !== ""){
+else if (ingredientInput.val()!== ""){
     searchIngredient = ingredientInput.val();
     puppyURL = puppyURL + "i=" + searchIngredient;}
 else{
