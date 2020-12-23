@@ -34,7 +34,8 @@ th {
 .scroll {
   overflow-y:auto;
   max-height: 600px;
-  
+  color: #3B3C3E;
+
 }
 
 #stack tr:nth-child(even){background-color: #f2f2f2a2;}
