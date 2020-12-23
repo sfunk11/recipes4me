@@ -27,7 +27,6 @@
 
 $("#randomizer").click(function(){
     pageID = Math.floor(Math.random() *100);
-    console.log(pageID);
     getRandomRecipes(pageID);
     infoGen();
 })
@@ -42,13 +41,14 @@ $("#searchBtn").on("click", function(){
 });
 
 $(document).on("click",".save", function(){
-    console.log(this);
     var id = $(this).attr("id");
-    console.log(id);
     recipeID = "#card-title-"+ id;
+    elID = "#" + id;
     saveURL = $(recipeID).attr("href");
-    console.log(saveURL);
+    $(elID).addClass("disabled").text("Saved");
     getRecipeInfo(saveURL);
+
+
 });
 
          
