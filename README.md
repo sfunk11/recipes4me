@@ -32,9 +32,9 @@ Recipes4me is your own personal cookbook.  You can use the recipe search feature
 
 ### Screenshots
 
-![screenshot](./assets/Screenshot(1).png)
-![screenshot](./assets/Screenshot(2).png)
-![screenshot](./assets/Screenshot(3).png)
+![screenshot](assets/Screenshot(1).png)
+![screenshot](assets/Screenshot(2).png)
+![screenshot](assets/Screenshot(3).png)
 
 
 
