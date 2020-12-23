@@ -41,12 +41,14 @@ $("#searchBtn").on("click", function(){
 });
 
 $(document).on("click",".save", function(){
-    console.log(this);
     var id = $(this).attr("id");
-    console.log(id);
     recipeID = "#card-title-"+ id;
+    elID = "#" + id;
     saveURL = $(recipeID).attr("href");
+    $(elID).addClass("disabled").text("Saved");
     getRecipeInfo(saveURL);
+
+
 });
 
          
