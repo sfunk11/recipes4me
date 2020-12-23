@@ -24,7 +24,9 @@ Recipes4me is, at its most basic, a search engine that is specific to food and r
 
 
 ### Screenshots
-
+![alt text](assets/Screenshot(1).png)
+![alt text](assets/Screenshot(2).png)
+![alt text](assets/Screenshot(3).png)
 
 #### Link to Recipes4Me
 https://sfunk11.github.io/recipes4me/

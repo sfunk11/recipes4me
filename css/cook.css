@@ -31,9 +31,9 @@ th {
 }
 
 .scroll {
-  background-color: rgba(255, 255, 255, 0);
   color: #3B3C3E;
   border-collapse: collapse;
+  overflow-y:auto;
   max-height: 90%;
 }
 
@@ -63,20 +63,16 @@ td {
 tbody{
   background-color: rgba(255, 255, 255, 0.452);
   width: 20%;
+  max-height: 90%;
 }
 
 .card-name {
   background-color:#14679ea8; 
   color: #ffffff;
+  border: 2px solid;
 }
 
 .card-section img {
   height: 300px;
-
-}
-
-.card-section {
-  overflow-y:auto;
-  max-height: 90%;
 
 }
