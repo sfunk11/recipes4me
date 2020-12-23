@@ -13,6 +13,7 @@ function searchObject (name){
 
 function getRecipeInfo(recipeURL){
     let siteURL = recipeURL;
+    if (siteURL){
     const settings = {
 	"async": false,
 	"crossDomain": true,
@@ -45,11 +46,10 @@ function getRecipeInfo(recipeURL){
           return;
       }
       recipeList.push(recipe);
-      console.log(recipeList);
       localStorage.setItem("recipes",JSON.stringify(recipeList));
 
     }
-    )};
+    )}};
 
 
 
@@ -90,7 +90,6 @@ const puppySettings = {
 };
 
 $.ajax(puppySettings).done(function (response) {
-    console.log(JSON.parse(response));
     localStorage.setItem("searchResults", response);
 
 });
@@ -109,7 +108,6 @@ function getRandomRecipes(pageID){
 };
 
 $.ajax(randomSettings).done(function (response) {
-    console.log(JSON.parse(response));
     localStorage.setItem("searchResults", response);
 
 });
