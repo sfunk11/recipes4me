@@ -35,8 +35,12 @@
       </div>
       <div class="top-bar-left">
         <ul class="menu">
-          <li><input type="search" placeholder="Search" id = "searchName"/></li>
-          <li><button type="button" class="button success" id="searchBtn">Search</button></li>
+          <li><input type="search" placeholder="Search" id="searchName" /></li>
+          <li>
+            <button type="button" class="button success" id="searchBtn">
+              Search
+            </button>
+          </li>
         </ul>
       </div>
       <div class="top-bar-right">
@@ -47,39 +51,31 @@
         </ul>
       </div>
     </div>
-    
 
-    <table id="stack" class="scroll">
-      <tr style="color:rgb(255, 255, 255);">
+    <table id="stack" class="scroll" style="height: 80%">
+      <tr style="color: rgb(255, 255, 255)">
         <th>Recipes</th>
       </tr>
-      
-     
     </table>
 
-    <div class="recipe-Card" >
-      <div class = "card" style="width: 80%; background-color: rgba(255, 255, 255, 0.479);">
-      <div class="card-divider card-name">
-        Recipe Title will go here
+    <div class="recipe-Card">
+      <div class="card" style="width: 80%">
+        <h1 class="card-divider card-name" style="max-height: 40%;">Your Cookbook Recipe list.</h1>
+        <div class="card-section scroll" style="float: right">
+          <img src="#" alt="recipe picture" id="card-Image" height="300" style="display: none" />
+          <a href="#" id="link">Recipe source</a>
+          <p id="card-description">
+            Please click on a recipe that you have saved.
+          </p>
+          <ul id="card-Ingredients"></ul>
+          <ol>
+            <li>
+              <ol style="height: 50%" class="nested" id="card-Instructions"></ol>
+            </li>
+          </ol>
+        </div>
       </div>
-      <div class="card-section scroll" style="float: right;">
-       <img src= "#" alt = "recipe picture" id="card-Image" height = "300">
-        <a href="#" id="link">link to website</a>
-        <p id="card-description">ingredients list for food goes here
-        </p>
-        <ul id="card-Ingredients">
-        </ul>
-        <ol>
-          <li>Instructions:</li>
-          <li>
-            <ol class = "nested" id="card-Instructions">
-            </ol>
-          </li>
-        </ol>
-      </div>
-    </div> 
     </div>
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
@@ -88,6 +84,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./scripts/integration.js"></script>
-    <script src="./scripts/cookbook.js"> </script>
+    <script src="./scripts/cookbook.js"></script>
   </body>
 </html>

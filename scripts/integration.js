@@ -14,7 +14,7 @@ function searchObject (name){
 function getRecipeInfo(recipeURL){
     let siteURL = recipeURL;
     const settings = {
-	"async": true,
+	"async": false,
 	"crossDomain": true,
 	"url": "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi",
 	"method": "POST",

@@ -12,39 +12,37 @@ body {
 }
 
 #stack{
-  position: absolute;
-
+  float:right;
   top: 7.8%;
-  left: 87%;
-  min-height: 92%;
+  left: 81%;
+  min-height: 72%;
   font-family: Arial, Helvetica, sans-serif;
-  width: 13%;
-
+  width: 19%; 
+  background-color: rgba(255, 255, 255, 0);
 }
 
-#stack tr:nth-child(even){background-color: #ffffff71;}
-
-#stack tr:hover {background-color: rgba(25, 52, 175, 0.589);}
 
 th {
-  border: 1px solid rgb(255, 255, 255);
-  text-align: left;
-  background-color: #9726c4;
+  border: 2px solid;
+  text-align: center;
+  background-color: #14679ea8;
   width: 100%;
+  
 }
 
 .scroll {
-  overflow-y:auto;
-  max-height: 750px;
-  background-color: #fffdfd;
+  background-color: rgba(255, 255, 255, 0);
   color: #3B3C3E;
-
+  border-collapse: collapse;
+  max-height: 90%;
 }
 
+#stack tr:nth-child(even){background-color: #f2f2f2a2;}
+
+#stack tr:hover {background-color: #ddd;}
+
 table {
-  max-height: 900px;
-  overflow-y:auto;
-  background-color: #fffdfd;
+  background-color: rgba(255, 255, 255, 0);
   color: #3B3C3E;
 }
 
@@ -52,8 +50,33 @@ table {
   padding-left: 20%;
   padding-right: 20%;
   margin-bottom: 2%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 
 td {
   width: 50%;
+}
+
+
+
+tbody{
+  background-color: rgba(255, 255, 255, 0.452);
+  width: 20%;
+}
+
+.card-name {
+  background-color:#14679ea8; 
+  color: #ffffff;
+}
+
+.card-section img {
+  height: 300px;
+
+}
+
+.card-section {
+  overflow-y:auto;
+  max-height: 90%;
+
 }
