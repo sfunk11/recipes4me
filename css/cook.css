@@ -20,7 +20,6 @@ body {
   width: 19%; 
   color: #3B3C3E;
   border-collapse: collapse;
-  max-height: 90%;
 }
 
 
@@ -34,6 +33,8 @@ th {
 
 .scroll {
   overflow-y:auto;
+  max-height: 600px;
+  
 }
 
 #stack tr:nth-child(even){background-color: #f2f2f2a2;}
@@ -61,7 +62,6 @@ td {
 tbody{
   background-color: rgba(255, 255, 255, 0.452);
   width: 20%;
-  max-height: 90%;
 }
 
 .card-name {
