@@ -9,7 +9,7 @@ $(document).ready(function(){
      var recipeTable = $("<tr>");
      var recipeName = $("<td>");
 
-     $(recipeName).attr("class", "button expanded recipeList");
+     $(recipeName).attr("class", "hollow button expanded recipeList");
      
      $(recipeName).attr("data-recipeList", i);
      $(recipeTable).append(recipeName);
@@ -38,6 +38,7 @@ function displayrecipe(recipe){
    
     $(".card-name").text(recipe.name);
     $("#card-Image").attr("src", recipe.images[0]);
+    $("#card-Image").attr("style", "display: block")
     $("#link").attr("href", recipe.recipeURL);
     $("#card-description").text(recipe.description);
     getingredients(recipe.ingredients);

@@ -10,11 +10,8 @@
             var newCard = $(newCardTemplate);
             $("#recipe-cards").append(newCard);
             thumbID = "#thumb-" + i;
-            if (results[i].thumbnail != ""){
-                $(thumbID).attr("src", results[i].thumbnail);
-            } else {
                 $(thumbID).attr("style", "display: none")
-            }
+            
             titleID = "#card-title-" + i;
             $(titleID).html(results[i].title);
            $(titleID).attr("href", results[i].href);
