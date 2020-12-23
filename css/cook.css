@@ -35,7 +35,7 @@ th {
 
 .scroll {
   overflow-y:auto;
-  max-height: 400px;
+  max-height: 100%;
   background-color: #fffdfd;
   color: #3B3C3E;
 
