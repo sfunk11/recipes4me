@@ -26,7 +26,7 @@ Recipes4me is your own personal cookbook.  You can use the recipe search feature
 - RecipePuppy.com Api
 - Photopea.com
 - Foundation CSS framework
-- Pexels.com Free stock imgs
+- Pexels.com Free stock imgs.
 
 
 
