@@ -15,6 +15,7 @@
             titleID = "#card-title-" + i;
             $(titleID).html(results[i].title);
            $(titleID).attr("href", results[i].href);
+           $(titleID).attr("style", "color:#ffffff");
             imgID = "#ing-" + i;
             $(imgID).text("Ingredients: " + results[i].ingredients)
         }};
