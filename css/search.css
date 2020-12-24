@@ -29,12 +29,20 @@ body {
   top: 20px;
   left:300px;
   background-color:rgba(129, 127, 127, 0.788);
+  width: 39.5%;
   
 }
-#link{
-  color:red;
-}
-#card-title{
-  background-color: rgba(111, 186, 236, .0788);
+
+div.card {
+  background-color: rgba(255, 255, 255, 0.295);
 }
 
+div.card-divider {
+  background-color:#14679ea8; 
+  color: #ffffff;
+  border: 2px solid;
+}
+
+a {
+  color: #ffffff;
+}
