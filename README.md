@@ -13,9 +13,9 @@ Recipes4me is your own personal cookbook.  You can use the recipe search feature
 * Clicking on any of your saved recipes will bring up the recipe details in the main recipe card.
 
 ### Team Members
-- Samantha Funk
-- Jack Ciancone
-- Jonny Talbott
+- Samantha Funk (Github user: sfunk11)
+- Jack Ciancone (Github user: almostalantern)
+- Jonny Talbott (Github user: ponderhavok)
 
 ### Tools and APIs Utilized
 - HTML
